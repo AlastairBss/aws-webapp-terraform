@@ -52,6 +52,7 @@ Tech Stack
 Deployment Steps
 
     -terraform init
+    -terraform validate
     -terraform plan
     -terraform apply
 
