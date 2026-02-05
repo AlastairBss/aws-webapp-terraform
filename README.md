@@ -2,84 +2,82 @@
 Designed a production-style AWS infrastructure using Terraform featuring Application Load Balancer, Auto Scaling Group, private EC2 instances, NAT gateway networking, and multi-AZ high availability with secure architecture.
 
 
-Overview
+Overview:
 
 Production-style AWS infrastructure deployed using Terraform demonstrating:
 
-High availability across multiple AZs
+    -High availability across multiple AZs
 
-Private EC2 instances behind ALB
+    -Private EC2 instances behind ALB
 
-Auto scaling based on demand
+    -Auto scaling based on demand
 
-Secure VPC architecture
+    -Secure VPC architecture
 
-Infrastructure as Code deployment
+    -Infrastructure as Code deployment
 
 This replicates real-world cloud architecture patterns.
 
-Architecture Highlights
+-------------------------------------------------------------
 
-Custom VPC (10.0.0.0/16)
+Architecture Highlights:
 
-Public subnets → ALB + NAT Gateway
+    -Custom VPC (10.0.0.0/16)
 
-Private subnets → EC2 instances
+    -Public subnets → ALB + NAT Gateway
 
-Application Load Balancer with health checks
+    -Private subnets → EC2 instances
 
-Auto Scaling Group (min: 2, max: 4)
+    -Application Load Balancer with health checks
+ 
+    -Auto Scaling Group (min: 2, max: 4)
 
-NAT gateway for outbound-only internet
+    -NAT gateway for outbound-only internet
 
-Security groups enforcing ALB → EC2 traffic only
+    -Security groups enforcing ALB → EC2 traffic onlyArchitecture Highlights
+
+-------------------------------------------------------------
 
 Tech Stack
 
-AWS (EC2, ALB, ASG, VPC, NAT Gateway)
+    -AWS (EC2, ALB, ASG, VPC, NAT Gateway)
 
-Terraform
+    -Terraform
 
-Apache HTTP Server (demo app)
+    -Apache HTTP Server (demo app)
+
+--------------------------------------------------------------
 
 Deployment Steps
-terraform init
-terraform plan
-terraform apply
 
+    -terraform init
+    -terraform plan
+    -terraform apply
 
 Access the ALB DNS after deployment.
 
+-----------------------------------------------------------------
+
 Testing Done
 
-Load balancing validation
+    -Load balancing validation
 
-Auto-scaling behavior
+    -Auto-scaling behavior
 
-Fault tolerance testing
+    -Fault tolerance testing
 
-Security validation (no direct EC2 access)
+    -Security validation (no direct EC2 access)
+
+------------------------------------------------------------------
 
 Lessons / Challenges
 
-Examples:
+    -Syntax Errors
 
-Debugging unhealthy target group issues
+    -Debugging unhealthy target group issues
 
-Security group misconfiguration
+    -Security group misconfiguration
 
-Listener configuration fixes
+    -Listener configuration fixes
 
-Instance bootstrap timing problems
-
-(This part makes you look experienced — don’t skip.)
-
-Future Improvements
-
-HTTPS with ACM
-
-CI/CD pipeline
-
-Monitoring with CloudWatch/Grafana
-
-Terraform modularization
+    -Instance bootstrap timing problems
